@@ -1,0 +1,17 @@
+body {
+  background-color: #d95a6f;
+}
+.viewBody {
+  background-color: white;
+  width: 1000px;
+  height: 600px;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 6rem;
+}
+.center {
+  text-align: center;
+  width: 50%;
+  padding: 40px;
+  margin: auto;
+}

@@ -1,3 +1,69 @@
-.wrapper {
-    min-height: 100vh;
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300;700&display=swap");
+h1,
+h2,
+h3,
+h4,
+h5,
+input,
+li,
+a,
+label {
+  font-family: "Dosis", sans-serif;
 }
+
+.container {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  justify-self: center;
+}
+iframe {
+  border: none;
+}
+.inputes {
+  display: grid;
+  width: 100%;
+  padding-top: 10px;
+}
+.inputes h3 {
+  text-align: start;
+  padding: 10px;
+}
+.nameInput {
+  background-image: url("./style/user.png") no-repeat scroll;
+  padding-left: 30px;
+}
+::placeholder {
+  font-size: 1.1rem;
+}
+.cInput {
+  padding: 10px;
+  margin: 10px;
+  /* background-color: rgb(140, 139, 144); */
+  /*  border: none; */
+  /* border-radius: 7%; */
+  border-radius: 20px;
+  border: 1px solid #212324;
+
+  width: 250px;
+  height: 30px;
+  padding-left: 10px;
+}
+textarea {
+  resize: none;
+  min-height: 100px;
+  color: slategray;
+}
+.b {
+  margin: 10px;
+  width: 273px;
+  height: 50px;
+  background-color: #d95a6f;
+  border: none;
+  color: white;
+  border-radius: 30px;
+}
+/**  auth page **/
