@@ -1,6 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../style/message.css";
-const index = () => {
+import app from "../../firebase/firebase";
+
+const Index = () => {
+  const [form, setForm] = useState({
+    name: "",
+    message: "",
+  });
+  const handleChange = (event) => {
+    setForm({ ...form, [event.target.name]: event.target.value });
+  };
+
+  function addMessage({ message, name }) {
+    const db = app.firestore();
+    db.settings({
+      timestampsInSnapshots: true,
+    });
+    db.collection("messages")
+      .add({
+        name,
+        message,
+      })
+      .then(() => alert("masseage added !"));
+  }
   return (
     <div
       className="center viewBody"
@@ -18,22 +40,27 @@ const index = () => {
         </div>
         <div className="inputes">
           {/* <h3>get in touch</h3> */}
-          <input placeholder="name" name="name" className="cInput nameInput" />
+          <input
+            placeholder="name"
+            name="name"
+            className="cInput nameInput"
+            onChange={handleChange}
+          />
           <textarea
-            name="comment"
+            name="message"
             form="usrform"
             className="cInput"
-            rows="10"
-            cols="100"
-            maxlength="20"
+            onChange={handleChange}
           >
             your message
           </textarea>
-          <button className="b">send your message</button>
+          <button className="b" onClick={() => addMessage(form)}>
+            send your message
+          </button>
         </div>
       </div>
     </div>
   );
 };
 
-export default index;
+export default Index;
